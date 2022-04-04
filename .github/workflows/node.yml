@@ -14,10 +14,10 @@ jobs:
         node-version: [14.x, 16.x]
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js version ${{ metrix.node-version }}
+      - name: Use Node.js version ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matix.node-version }}
+          node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm run build --prefix client
       - run: npm test
